@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link href={"/"}>
             <Image
               src={logo}
-              className="w-[180px] lg:w-[220px] object-cover object-center -ml-4 lg:-ml-6"
+              className="w-[180px] lg:w-[220px] object-cover object-center -ml-2"
               width={200}
               height={120}
               alt="digitriit logo"
