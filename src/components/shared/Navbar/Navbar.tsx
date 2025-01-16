@@ -18,7 +18,7 @@ export const navlinks = [
 const Navbar = () => {
   const [isOpen, setIsopen] = useState<boolean>(false);
   return (
-    <div className="bg-white bg-opacity-15 backdrop-blur-md fixed top-0 left-0 z-50 w-full">
+    <div className="bg-white bg-opacity-15 backdrop-blur-md  top-0 left-0 z-50 w-full">
       <div className="container h-24 flex items-center justify-between">
         <div className="">
           <Link href={"/"}>
