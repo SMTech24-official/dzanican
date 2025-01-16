@@ -1,3 +1,10 @@
+import Navbar from "@/components/shared/Navbar/Navbar";
+
+
 export default function Home() {
-  return <div className="container">Welcome</div>;
+  return (
+    <div className="">
+      <Navbar />
+    </div>
+  );
 }
