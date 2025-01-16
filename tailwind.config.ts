@@ -8,6 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: "20px",
+        screens: {
+          lg: "1440px",
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
