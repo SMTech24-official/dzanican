@@ -14,7 +14,7 @@ const SearchComponent = ({ hidden }: { hidden: boolean }) => {
         hidden ? "hidden md:flex" : "flex md:hidden"
       }`}
     >
-      <div className="flex flex-col md:flex-row w-full  max-w-2xl mx-auto px-5 items-center gap-2 rounded-lg ">
+      <div className="flex flex-col md:flex-row w-full  max-w-2xl mx-auto px-5 md:items-center gap-2 rounded-lg ">
         <div className="flex flex-1 items-center w-full gap-2  bg-[#1D1D1F0D]/5 rounded-sm border-[#BDC3C7] border p-1 h-full px-4">
           <Search className="h-5 w-5 text-black" />
           <Input
@@ -28,7 +28,7 @@ const SearchComponent = ({ hidden }: { hidden: boolean }) => {
         <Button
           onClick={handleSearch}
           variant="ghost"
-          className="rounded-sm bg-[#2C3E50] px-8 w-full md:w-20 p-3 text-sm h-full duration-300  text-white hover:text-white hover:bg-[#405c77]"
+          className="rounded-sm bg-[#2C3E50] px-8 w-1/2 md:w-20 p-3 text-sm h-full duration-300  text-white hover:text-white hover:bg-[#405c77]"
         >
           Search
         </Button>

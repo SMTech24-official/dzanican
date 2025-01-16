@@ -42,25 +42,21 @@ const Sidebar: FC<PageProps> = ({ isOpen, setIsopen }) => {
           </div>
           {/* search bar */}
           <SearchComponent hidden={false} />
-          <div className="flex flex-col items-start gap-3 text-primary mt-8">
-            {navlinks?.map((link, indx) => (
-              <Link
-                className="block w-full border-b hover:bg-primary hover:text-white"
-                key={indx}
-                href={link?.path}
-              >
-                <h3 className="p-3 px-5">{link?.text}</h3>
-              </Link>
-            ))}
-          </div>
+
           <div className="mt-4 px-5">
             <div className="flex flex-col items-center gap-5">
-              <button className="border flex items-center justify-center p-2 w-full text-center text-primary px-8 hover:text-white rounded-full  border-primary hover:border-primary/50 bg-transparent duration-300 hover:bg-primary">
-                Login
-              </button>
-              <button className="border flex w-full justify-center items-center p-2 text-white px-5 hover:text-primary rounded-full  border-primary hover:bg-transparent duration-300 bg-primary">
-                Register now
-              </button>
+              <div className="flex flex-wrap items-center gap-5 mt-8">
+                <Link href={"/login"} className="w-full">
+                  <button className="border text-lg w-full border-[#2C3E50]/80 flex items-center justify-center p-2 text-[#2C3E50]  rounded-sm  px-12 hover:text-white  hover:border-[#2C3E50] bg-transparent duration-500 hover:bg-[#2C3E50]">
+                    Login
+                  </button>
+                </Link>
+                <Link href={"/signup"} className=" w-full">
+                  <button className="border text-lg w-full border-[#2C3E50]/80 flex items-center justify-center p-2 text-white rounded-sm  px-8 hover:text-white  hover:border-[#2C3E50] bg-[#2C3E50] duration-300 hover:bg-[#47688a]">
+                    Register now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </SheetContent>
