@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { FC } from "react";
-import { navlinks } from "../Navbar/Navbar";
 import SearchComponent from "../Search/Search";
 interface PageProps {
   isOpen: boolean;
