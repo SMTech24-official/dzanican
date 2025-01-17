@@ -107,8 +107,8 @@ export default function Signup() {
                         </div>
                     </form>
                 </div>
-            ): (<Login/>)}
-       </>
+            ) : (<Login />)}
+        </>
     )
 }
 

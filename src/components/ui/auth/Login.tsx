@@ -66,7 +66,7 @@ export default function Login() {
                         </div>
                     </form>
                 </div>
-        ):(<Signup/>)}
+            ) : (<Signup />)}
         </>
     )
 }

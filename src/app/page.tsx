@@ -5,7 +5,7 @@ import bg from '@/assets/images/bg.png'
 import { MdAttachFile } from "react-icons/md";
 import { useState } from "react";
 import SearchBar from "@/components/ui/SearchBar";
-import Signup from "@/components/ui/Signup";
+import Signup from "@/components/ui/auth/Signup";
 
 
 
@@ -24,7 +24,7 @@ export default function Home() {
         {/* Dark overlay */}
 
         {signUp ? (
-          
+
           <div className="relative z-10 mx-auto px-4 text-center">
             {/* <div className="absolute inset-0 bg-black/30" /> */}
             <p className="text-white/90 text-[32px] mb-4">
