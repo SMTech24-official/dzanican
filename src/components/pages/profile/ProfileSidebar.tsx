@@ -5,9 +5,11 @@ import { LogOutIcon, Paperclip } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const ProfileSidebar = () => {
   const [uploadedImage, setUploadedImage] = useState<any>();
+  const router = useRouter();
 
   const handleFileUpload = (e: any) => {
     const file = e.target.files[0];
@@ -16,6 +18,12 @@ const ProfileSidebar = () => {
       reader.onload = () => setUploadedImage(reader.result);
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleLogout = (e: any) => {
+    e.preventDefault();
+    localStorage?.removeItem("user");
+    router.push("/");
   };
   return (
     <div className="py-6 flex flex-col  h-full">
@@ -52,7 +60,10 @@ const ProfileSidebar = () => {
         />
       </div>
       <div className="p-4 flex-1 flex items-end">
-        <Button className="w-full bg-red-600 hover:bg-red-500 duration-300">
+        <Button
+          onClick={handleLogout}
+          className="w-full bg-red-600 hover:bg-red-500 duration-300"
+        >
           <LogOutIcon /> Logout
         </Button>
       </div>

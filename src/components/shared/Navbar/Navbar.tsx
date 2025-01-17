@@ -4,7 +4,7 @@ import logo from "@/assets/logo.svg";
 import { ChevronDown, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchComponent from "../Search/Search";
 import Sidebar from "../Sidebar/Sidebar";
 import { Button } from "@/components/ui/button";
@@ -17,10 +17,14 @@ export const navlinks = [
   { path: "/#faq", text: "Contact Us" },
 ];
 
-const user = localStorage?.getItem("user");
-
 const Navbar = () => {
   const [isOpen, setIsopen] = useState<boolean>(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const user = localStorage?.getItem("user");
+    setUser(user);
+  }, [user]);
   return (
     <div className="bg-white bg-opacity-15 backdrop-blur-md  top-0 left-0 z-50 w-full shadow-xl">
       <div className="container h-[100px] flex items-center justify-between">
