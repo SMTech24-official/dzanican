@@ -1,12 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const SearchComponent = ({ hidden }: { hidden: boolean }) => {
+  const router = useRouter();
   const [searchValue, setSearchValue] = useState<string | number>("");
-  const handleSearch = () => {
+  const handleSearch = (e: any) => {
+    e.preventDefault();
     console.log(searchValue);
+    router.push("/search-result");
   };
   return (
     <div

@@ -58,10 +58,10 @@ const ProfileSidebar = ({
           <p className="text-sm text-gray-400">danialdavid@gmail.com</p>
         </div>
         <label htmlFor="upload-photo" className="w-full">
-          <button className="mt-2 w-full gap-2 border  bg-gray-100/10 text-sm text-white flex items-center justify-center p-3 rounded-lg hover:bg-gray-100/15">
+          <div className="mt-2 w-full gap-2 border  bg-gray-100/10 text-sm text-white flex items-center justify-center p-3 rounded-lg hover:bg-gray-100/15">
             <Paperclip className="h-4 w-4" />
             Upload Photo
-          </button>
+          </div>
         </label>
         <input
           id="upload-photo"
