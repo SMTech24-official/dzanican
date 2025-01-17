@@ -8,22 +8,21 @@ import { FaApple } from "react-icons/fa";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { useForm, SubmitHandler } from "react-hook-form";
-
-
+import { useRouter } from "next/navigation";
 
 type FormData = {
- 
   email: string;
   password: string;
 };
 export default function Login() {
-    const { register, handleSubmit, reset } = useForm<FormData>();
-  
- const onSubmit: SubmitHandler<FormData> = (data) => {
+  const { register, handleSubmit, reset } = useForm<FormData>();
+  const router = useRouter();
+
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log("Form Data:", data);
     toast.success("Signup successful");
     localStorage.setItem("user", JSON.stringify(true));
-    // router.push("/");
+    router.push("/");
     reset(); // Reset the form after submission
   };
   return (
@@ -42,7 +41,6 @@ export default function Login() {
             <Input
               id="email"
               {...register("email", { required: true })}
-
               type="email"
               placeholder="Enter your mail address"
               className="h-12 bg-gray-50 border-gray-200"
@@ -59,7 +57,6 @@ export default function Login() {
             <Input
               id="password"
               {...register("password", { required: true })}
-
               type="password"
               placeholder="********"
               className="h-12 bg-gray-50 border-gray-200"

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 // import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
-
+import { useRouter } from "next/navigation";
 
 type FormData = {
   firstName: string;
@@ -20,14 +20,14 @@ type FormData = {
 };
 
 export default function Signup() {
-  // const router = useRouter();
+  const router = useRouter();
   const { register, handleSubmit, reset } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log("Form Data:", data);
     toast.success("Signup successful");
     localStorage.setItem("user", JSON.stringify(true));
-    // router.push("/");
+    router.push("/success");
     reset(); // Reset the form after submission
   };
   return (
@@ -48,7 +48,6 @@ export default function Signup() {
                 id="firstName"
                 placeholder="First name"
                 {...register("firstName", { required: true })}
-
                 className="h-12 bg-gray-50 border-gray-200"
               />
             </div>
@@ -63,7 +62,6 @@ export default function Signup() {
               <Input
                 id="lastName"
                 {...register("lastName", { required: true })}
-
                 placeholder="Last name"
                 className="h-12 bg-gray-50 border-gray-200"
               />
@@ -80,7 +78,6 @@ export default function Signup() {
             <Input
               id="email"
               {...register("email", { required: true })}
-
               type="email"
               placeholder="Enter your mail address"
               className="h-12 bg-gray-50 border-gray-200"
@@ -97,7 +94,6 @@ export default function Signup() {
             <Input
               id="password"
               {...register("password", { required: true })}
-
               type="password"
               placeholder="********"
               className="h-12 bg-gray-50 border-gray-200"
@@ -115,7 +111,6 @@ export default function Signup() {
               id="confirmPassword"
               type="password"
               {...register("confirmPassword", { required: true })}
-
               placeholder="********"
               className="h-12 bg-gray-50 border-gray-200"
             />
