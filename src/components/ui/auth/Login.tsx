@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -8,22 +7,31 @@ import { FaApple } from "react-icons/fa";
 
 import Link from "next/link";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { useForm, SubmitHandler } from "react-hook-form";
 
+
+
+type FormData = {
+ 
+  email: string;
+  password: string;
+};
 export default function Login() {
-  const router = useRouter();
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    toast?.success("Login successfull");
+    const { register, handleSubmit, reset } = useForm<FormData>();
+  
+ const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log("Form Data:", data);
+    toast.success("Signup successful");
     localStorage.setItem("user", JSON.stringify(true));
-    router.push("/");
+    // router.push("/");
+    reset(); // Reset the form after submission
   };
   return (
     <>
       <div className="w-full max-w-[600px] mx-auto p-6 bg-white rounded-[8px] ">
         <h1 className="text-[32px] font-semibold text-center mb-8">Login</h1>
 
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-2">
             <label
               htmlFor="email"
@@ -33,6 +41,8 @@ export default function Login() {
             </label>
             <Input
               id="email"
+              {...register("email", { required: true })}
+
               type="email"
               placeholder="Enter your mail address"
               className="h-12 bg-gray-50 border-gray-200"
@@ -48,6 +58,8 @@ export default function Login() {
             </label>
             <Input
               id="password"
+              {...register("password", { required: true })}
+
               type="password"
               placeholder="********"
               className="h-12 bg-gray-50 border-gray-200"
@@ -55,7 +67,7 @@ export default function Login() {
           </div>
 
           <Button
-            onClick={handleSubmit}
+            type="submit"
             className="w-full h-12 text-[16px] bg-[#2C3641] hover:bg-[#3A4754]"
           >
             Login

@@ -16,6 +16,8 @@ export default {
         },
       },
       colors: {
+        bg_Primary: '#2C3E50',
+        bg_Secondary: "#D4AF37",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
