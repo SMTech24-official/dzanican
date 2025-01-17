@@ -8,7 +8,7 @@ export default function Page() {
         <div className="flex flex-col items-center justify-center min-h-screen px-4">
             <div className="text-center space-y-6">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="w-8 h-8">
+                    <div>
                         <Image
                             src={logo}
                             className="w-[180px] lg:w-[344px] object-cover object-center -ml-4 lg:-ml-6"

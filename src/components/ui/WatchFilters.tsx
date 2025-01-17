@@ -34,7 +34,7 @@ export default function WatchFilters() {
 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <div className="w-full md:w-[280px] cursor-pointer">
+                        <div className="w-full md:w-[280px] cursor-pointer mr-4">
                             <div className="flex items-center justify-between w-full p-3 border rounded-md bg-white hover:border-gray-400">
                                 <div>
                                     <div className="text-[20px] font-semibold mb-1">{selectedBrand || "Brand"}</div>
