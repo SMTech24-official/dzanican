@@ -46,7 +46,7 @@ const CreatePost = () => {
 
   return (
     <div>
-      <div className="container py-12">
+      <div className="container py-12 p-6">
         <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
           {/* Drag and Drop Section */}
           <div

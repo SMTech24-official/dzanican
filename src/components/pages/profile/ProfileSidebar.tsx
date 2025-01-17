@@ -1,13 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
-import { LogOutIcon, Paperclip } from "lucide-react";
+import { LogOutIcon, Paperclip, XIcon } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
-const ProfileSidebar = () => {
+const ProfileSidebar = ({
+  openClose,
+}: {
+  openClose: (val: boolean) => void;
+}) => {
   const [uploadedImage, setUploadedImage] = useState<any>();
+  const router = useRouter();
 
   const handleFileUpload = (e: any) => {
     const file = e.target.files[0];
@@ -17,8 +24,21 @@ const ProfileSidebar = () => {
       reader.readAsDataURL(file);
     }
   };
+
+  const handleLogout = (e: any) => {
+    e.preventDefault();
+    toast.success("Logout successful");
+    localStorage?.removeItem("user");
+    router.push("/");
+  };
   return (
-    <div className="py-6 flex flex-col  h-full">
+    <div className="py-6 flex flex-col relative  h- md:h-[90vh] bg-slate-500">
+      <div
+        onClick={() => openClose(false)}
+        className=" md:hidden absolute top-0 right-0 text-white"
+      >
+        <XIcon />
+      </div>
       <div className="flex flex-col items-center gap-2 p-4">
         <Avatar className="h-28 w-28">
           {uploadedImage ? (
@@ -52,7 +72,10 @@ const ProfileSidebar = () => {
         />
       </div>
       <div className="p-4 flex-1 flex items-end">
-        <Button className="w-full bg-red-600 hover:bg-red-500 duration-300">
+        <Button
+          onClick={handleLogout}
+          className="w-full bg-red-600 hover:bg-red-500 duration-300"
+        >
           <LogOutIcon /> Logout
         </Button>
       </div>
