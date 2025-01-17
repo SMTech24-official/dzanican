@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 import PostCard from "@/components/shared/PostCard/PostCard";
 import PostDetailsCard from "@/components/shared/PostDetails/PostDetails";
 import { postData } from "@/components/utils/data";
+import { useParams } from "next/navigation";
 import React from "react";
 
-const PostDetails = ({ params }: { params: { id: number | string } }) => {
-  console.log(params?.id);
+const PostDetails = () => {
+  // console.log(params?.id);
+  const params = useParams();
+  // console.log(params.id);
   const post = postData?.find((post) => post?.id === Number(params?.id));
 
   return (

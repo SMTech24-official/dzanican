@@ -14,8 +14,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { postData } from "@/components/utils/data";
 import WarningModal from "@/components/shared/WarningModal/WarningModal";
+import { useParams } from "next/navigation";
 
-const EditPost = ({ params }: { params: { id: string } }) => {
+const EditPost = () => {
+  const params = useParams();
   const post = postData?.find((post) => post?.id === Number(params?.id));
   console.log(post);
 
