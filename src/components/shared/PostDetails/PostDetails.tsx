@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function PostDetailsCard({ data }: { data: any }) {
-  console.log(data);
+  // console.log(data);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5  gap-8 rounded-lg bg-white">
       <div className="w-full overflow-hidden rounded-lg lg:col-span-2">

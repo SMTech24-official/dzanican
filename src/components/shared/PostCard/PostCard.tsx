@@ -3,7 +3,7 @@ import Link from "next/link";
 // import postImge1 from "@/assets/images/postImage1.png";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function PostCard({ post }: { post: any }) {
-  console.log(post);
+  // console.log(post);
   return (
     <div className="w-full overflow-hidden h-fit rounded-lg bg-white shadow mb-6">
       <div className="relative h-[200px]">

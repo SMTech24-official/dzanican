@@ -12,7 +12,7 @@ import {
 export default function ModelSelect({ models }: { models: string[] }) {
   const [open, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<string[]>(["Rolex"]);
-  console.log(selected);
+  // console.log(selected);
 
   return (
     <Collapsible

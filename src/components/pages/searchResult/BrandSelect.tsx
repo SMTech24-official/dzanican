@@ -12,7 +12,7 @@ import {
 export default function BrandSelect({ brands }: { brands: string[] }) {
   const [open, setOpen] = React.useState(true);
   const [selected, setSelected] = React.useState<string[]>(["Rolex"]);
-  console.log(selected);
+  // console.log(selected);
 
   return (
     <Collapsible
