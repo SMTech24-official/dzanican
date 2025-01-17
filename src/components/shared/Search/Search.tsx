@@ -25,7 +25,6 @@ const SearchComponent = ({ hidden }: { hidden: boolean }) => {
         <div className="flex flex-1 items-center w-full gap-2  bg-[#1D1D1F0D]/5 rounded-sm border-[#BDC3C7] border p-1 h-full px-4">
           <Search className="h-5 w-5 text-black" />
           <Input
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onChange={(e: any) => setSearchValue(e.target?.value)}
             type="text"
             placeholder="G-Shock Mudmaster"
