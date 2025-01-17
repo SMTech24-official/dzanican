@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const ProfileSidebar = () => {
   const [uploadedImage, setUploadedImage] = useState<any>();
@@ -22,6 +23,7 @@ const ProfileSidebar = () => {
 
   const handleLogout = (e: any) => {
     e.preventDefault();
+    toast.success("Logout successful");
     localStorage?.removeItem("user");
     router.push("/");
   };

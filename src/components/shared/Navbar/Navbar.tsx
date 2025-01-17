@@ -19,11 +19,15 @@ export const navlinks = [
 
 const Navbar = () => {
   const [isOpen, setIsopen] = useState<boolean>(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<boolean>(false);
 
   useEffect(() => {
     const user = localStorage?.getItem("user");
-    setUser(user);
+    if (user) {
+      setUser(JSON.parse(user));
+    } else {
+      setUser(false);
+    }
   }, [user]);
   return (
     <div className="bg-white bg-opacity-15 backdrop-blur-md  top-0 left-0 z-50 w-full shadow-xl">
