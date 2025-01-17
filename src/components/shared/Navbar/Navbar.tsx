@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [user]);
   return (
     <div className="bg-white bg-opacity-15 backdrop-blur-md  top-0 left-0 z-50 w-full shadow-xl">
-      <div className="container h-[100px] flex items-center justify-between">
+      <div className="container px-5 h-[100px] flex items-center justify-between">
         <div className="">
           <Link href={"/"}>
             <Image
