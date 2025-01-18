@@ -18,27 +18,23 @@ export default function Home() {
     router.push("/signup"); // Call push correctly
   };
 
-
   return (
     <div className="">
       <main
         className="h-[90vh] relative bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${bg.src})` }}
-
       >
         {/* Dark overlay */}
-
-
         <div className="relative z-10 mx-auto px-4 text-center">
           {/* <div className="absolute inset-0 bg-black/30" /> */}
-          <p className="text-white/90 text-[32px] mb-4">
+          <p className="text-white/90 lg:text-[32px] md:text-[25px] text-[20px] mb-4">
             Find wrist shots, explore styles, and make the perfect choice.
           </p>
-          <h1 className="text-white text-[64px] md:text-6xl font-serif mb-12">
+          <h1 className="text-white text-[48px] sm:text-[64px] font-serif mb-12">
             Discover the Perfect Watch for Your Wrist
           </h1>
 
-          <div className=" items-center">
+          <div className="items-center">
             {showSearch ? (
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
                 <Button
@@ -53,7 +49,6 @@ export default function Home() {
                 <Button
                   size="lg"
                   onClick={signIn} // Hide the search section
-
                   className="bg-bg_Secondary hover:bg-[#d4ab45] text-black text-lg py-6 px-8 w-full sm:w-auto min-w-[240px]"
                 >
                   <MdAttachFile className="w-8" />
@@ -65,11 +60,8 @@ export default function Home() {
             )}
           </div>
         </div>
-
-
-
       </main>
     </div>
-  )
+  );
 }
 
