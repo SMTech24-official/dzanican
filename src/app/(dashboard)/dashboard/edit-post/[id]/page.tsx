@@ -19,7 +19,7 @@ import { useParams } from "next/navigation";
 const EditPost = () => {
   const params = useParams();
   const post = postData?.find((post) => post?.id === Number(params?.id));
-  console.log(post);
+  // console.log(post);
 
   const [file, setFile] = useState<string | null>(null);
   const [preview, setPreview] = useState<string | StaticImageData | null>(

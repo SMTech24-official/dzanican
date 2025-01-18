@@ -8,7 +8,7 @@ import { PiDotsThreeOutlineVerticalLight } from "react-icons/pi";
 
 const Profile = () => {
   const [ProfileSidebarOpen, setProfileSidebarOpen] = useState(false);
-  console.log(ProfileSidebarOpen);
+  //   console.log(ProfileSidebarOpen);
   return (
     <div className="h-[90.5vh] max-h-[90.5vh] min-h-[500px] fles flex-col overflow-hidden">
       <div className="container grid grid-cols-1 md:grid-cols-[256px_1fr]  h-[91vh]">
@@ -25,8 +25,7 @@ const Profile = () => {
               <PiDotsThreeOutlineVerticalLight
                 size={25}
                 onClick={() => {
-                  console.log(setProfileSidebarOpen(!ProfileSidebarOpen));
-                  console.log("object");
+                  setProfileSidebarOpen(!ProfileSidebarOpen);
                 }}
               />
             </div>
