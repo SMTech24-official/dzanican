@@ -9,6 +9,7 @@ import SearchComponent from "../Search/Search";
 import Sidebar from "../Sidebar/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { usePathname } from "next/navigation";
 
 export const navlinks = [
   { path: "/about", text: "About Us" },
@@ -20,6 +21,8 @@ export const navlinks = [
 const Navbar = () => {
   const [isOpen, setIsopen] = useState<boolean>(false);
   const [user, setUser] = useState<boolean>(false);
+
+  const pathName = usePathname();
 
   useEffect(() => {
     const user = localStorage?.getItem("user");
@@ -44,7 +47,9 @@ const Navbar = () => {
           </Link>
         </div>
         {/* center  */}
-        <SearchComponent hidden={true} />
+        <div className={`flex-1 ${pathName === "/" ? "hidden" : "block"}`}>
+          <SearchComponent hidden={true} />
+        </div>
         {/* right  */}
         <div className=" hidden lg:flex items-center gap-8 lg:gap-20 text-white">
           {user ? (

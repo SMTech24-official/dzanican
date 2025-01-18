@@ -17,7 +17,7 @@ const SearchComponent = ({ hidden }: { hidden: boolean }) => {
   };
   return (
     <div
-      className={` items-center gap-5 flex-1 ${
+      className={` items-center gap-5 flex-1 w-full ${
         hidden ? "hidden md:flex" : "flex md:hidden"
       }`}
     >
