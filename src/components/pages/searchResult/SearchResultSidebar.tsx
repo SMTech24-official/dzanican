@@ -27,7 +27,7 @@ const SearchResultSidebar = ({
   ];
   return (
     <div>
-      <div className="overflow-hidden md:h-[90vh] h-[88vh] relative overflow-y-auto">
+      <div className="overflow-hidden md:h-[85vh] h-[88vh] hide-scrollbar relative overflow-y-auto">
         <div
           onClick={() => setFilterOpen(false)}
           className=" md:hidden absolute top-0 right-0 text-red-600"
